@@ -36,8 +36,8 @@ public class RegisterPage implements ActionListener { //class Register page call
 	        // Storing names
 			ArrayList<String> UserFirstNameLabel1 = new ArrayList<String>();
 			ArrayList<String> UserLastNameLabel1 = new ArrayList<String>();
-			//
 			
+			//First and Last Name will be stored for future outputs
 			
 			HashMap<String,String> registerinfo = new HashMap<String,String>();
 			
@@ -94,6 +94,9 @@ public class RegisterPage implements ActionListener { //class Register page call
 					newUserPasswordField.setText("");
 					UserFirstNameField.setText("");
 					UserLastNameField.setText("");
+					
+					//add message using stored name after registering
+					
 					@SuppressWarnings("unused")
 					LoginPage loginPage = new LoginPage(registerinfo); //brings user back to Loginpage
 				}	
