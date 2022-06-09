@@ -2,6 +2,9 @@ import java.awt.*;
 import javax.swing.*;
 
 import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 
 import java.util.HashMap;
  
@@ -23,9 +26,21 @@ public class RegisterPage implements ActionListener { //class Register page call
 			JLabel UserFirstNameLabel = new JLabel("First Name: ");
 			JLabel UserLastNameLabel = new JLabel("Last Name: ");
 			
+			
+			ArrayList<String> newUserIDLabel1 = new ArrayList<String>();
+	        ArrayList<Integer> newUserPasswordLabel1 = new ArrayList<Integer>();
+	        
+	        //while (true) {
+	            // while loop for stored user and pass
+	        
+			
+			 
+			
 			HashMap<String,String> registerinfo = new HashMap<String,String>();
 			
 			RegisterPage(HashMap<String,String> registerInfoOriginal){
+				
+				//add function to store information
 				
 				registerinfo = registerInfoOriginal;
 				//RegisterPage(String userID){
