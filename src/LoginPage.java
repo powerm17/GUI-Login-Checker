@@ -74,24 +74,22 @@ public class LoginPage implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		// User clicks view button
 		if (e.getSource() == showPassButton) {
 			if (userPasswordField.getEchoChar() != '\u0000');
 			userPasswordField.setEchoChar('\u0000');
 		} else {
+			@SuppressWarnings("unused")
 			char c = (Character) UIManager.get("PasswordField.echoChar");
-			
 			userPasswordField.repaint();
 			userPasswordField.revalidate();
 
 		}
 
-		// User clicks reset button sets everything back
 		if (e.getSource() == resetButton) {
 			userIDField.setText("");
 			userPasswordField.setText("");
 		}
-		// Brings user to new RegsiterPage
+
 		if (e.getSource() == registerButton) {
 			userIDField.setText("");
 			userPasswordField.setText("");
@@ -99,7 +97,6 @@ public class LoginPage implements ActionListener {
 			RegisterPage registerPage = new RegisterPage(logininfo);
 		}
 
-		// Login verifies the fields are correct and brings user to the StopWatch
 		loginCheck(e);
 	}
 
@@ -126,7 +123,6 @@ public class LoginPage implements ActionListener {
 
 		} else {
 			messageLabel.setForeground(Color.red);
-			// messageLabel.setText("username not found");
 		}
 	}
 }
