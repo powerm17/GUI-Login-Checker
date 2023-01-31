@@ -76,11 +76,13 @@ public class LoginPage implements ActionListener {
 
 		// User clicks view button
 		if (e.getSource() == showPassButton) {
-			if (userPasswordField.getEchoChar() != '\u0000')
-				;
+			if (userPasswordField.getEchoChar() != '\u0000');
 			userPasswordField.setEchoChar('\u0000');
 		} else {
-			userPasswordField.setEchoChar((Character) UIManager.get("PasswordField.echoChar"));
+			char c = (Character) UIManager.get("PasswordField.echoChar");
+			
+			userPasswordField.repaint();
+			userPasswordField.revalidate();
 
 		}
 
@@ -98,10 +100,10 @@ public class LoginPage implements ActionListener {
 		}
 
 		// Login verifies the fields are correct and brings user to the StopWatch
-		loginButton(e);
+		loginCheck(e);
 	}
 
-	private void loginButton(ActionEvent e) {
+	private void loginCheck(ActionEvent e) { //Method checks, implementing login button
 		if (e.getSource() == loginButton) {
 
 			String userID = userIDField.getText();
