@@ -8,23 +8,21 @@ import java.awt.Color;
 public class LoginPage implements ActionListener {
 
 	JFrame frame = new JFrame();
-	// Creates buttons
+	
 	JButton loginButton = new JButton("Login");
 	JButton resetButton = new JButton("Reset");
 	JButton registerButton = new JButton("Register");
 	JButton showPassButton = new JButton("view");
 
 	JTextField userIDField = new JTextField();
-	// Password Field to conceal password typed with ***
 	JPasswordField userPasswordField = new JPasswordField();
+	// Password Field to conceal password typed with ***
 
-	// Creates Labels
 	JLabel userIDLabel = new JLabel("Username:");
 	JLabel userPasswordLabel = new JLabel("Password:");
 	JLabel messageLabel = new JLabel();
 
 	HashMap<String, String> logininfo = new HashMap<String, String>();
-	// Hash table based implementation of the Map interface
 
 	LoginPage(HashMap<String, String> loginInfoOriginal) {
 
@@ -78,8 +76,7 @@ public class LoginPage implements ActionListener {
 			if (userPasswordField.getEchoChar() != '\u0000');
 			userPasswordField.setEchoChar('\u0000');
 		} else {
-			@SuppressWarnings("unused")
-			char c = (Character) UIManager.get("PasswordField.echoChar");
+			UIManager.get("PasswordField.echoChar");
 			userPasswordField.repaint();
 			userPasswordField.revalidate();
 
@@ -93,8 +90,8 @@ public class LoginPage implements ActionListener {
 		if (e.getSource() == registerButton) {
 			userIDField.setText("");
 			userPasswordField.setText("");
-			@SuppressWarnings("unused")
-			RegisterPage registerPage = new RegisterPage(logininfo);
+			
+			new RegisterPage(logininfo);
 		}
 
 		loginCheck(e);
@@ -109,20 +106,19 @@ public class LoginPage implements ActionListener {
 			if (logininfo.containsKey(userID)) {
 				if (logininfo.get(userID).equals(password)) {
 
-					messageLabel.setForeground(Color.green);
 					messageLabel.setText("Login successful");
 					frame.dispose();
-					@SuppressWarnings("unused")
-					StopWatch welcomePage = new StopWatch();
+					
+					new StopWatch();
 				}
 
 			} else {
+				if (logininfo.get(userID) != (password)) {
+
 				messageLabel.setForeground(Color.red);
 				messageLabel.setText("Incorrect Username");
+				}
 			}
-
-		} else {
-			messageLabel.setForeground(Color.red);
 		}
 	}
 }

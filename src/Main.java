@@ -7,11 +7,11 @@ public class Main {
 
 		IDandPasswords idandPasswords = new IDandPasswords();
 
-		@SuppressWarnings("unused")
-		LoginPage loginPage = new LoginPage(idandPasswords.getLoginInfo());
+		
+		new LoginPage(idandPasswords.getLoginInfo());
 
-		@SuppressWarnings("unused")
-		ImageIcon image = new ImageIcon("image.png");
+		
+		new ImageIcon("image.png");
 
 		JLabel label = new JLabel();
 
